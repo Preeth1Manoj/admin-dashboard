@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/adduser.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/f17626030c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+               
+                <span class="mdl-layout-title"> <button class="mdl-button mdl-js-button mdl-button--icon" id="menu-toggle">
+                    <i class="material-icons">menu</i>
+                </button>Dashboard</span>
+                
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-profile">
+                    <img src="/img/admin.png" alt="User Avatar" class="user-avatar">
+                    <span class="username">Admin</span>
+                </div>
+                <div class="notifications">
+                    <div class="dropdown">
+                  
+                        <i class="fas fa-chevron-down"></i>
+
+                        <div class="dropdown-content">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                          
+                            <div class="theme-toggler">
+                                
+                                 <a> <i class="fas fa-moon"></i>
+                                Dark mode</a>
+                            </div><hr>
+                            <a href="adminlogin.html">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </header>
+    
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title"> <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>TAMS</span>
+              </a></span>
+              <nav class="sidebar">
+                <ul>
+                    <br>
+                    <li><a href="admin1.html" ><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle"><i class="fas fa-users"></i> User Management <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu" style="display: none;">
+                            <li><a href="users.html">User List</a></li>
+                            <li><a href="adduser.html">Add User</a></li>
+                            <li><a href="#activity-log">Activity Log</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="course.html"><i class="fas fa-book"></i> Course Management</a></li>
+                    <li><a href="enquiry.html"><i class="fas fa-question-circle"></i> Enquiry Status</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user-cog"></i>Account Settings</a></li>
+                </ul>
+            </nav>
+          
+
+        </div>
+    
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <section class="activity-feed">
+                    <h4><b>ADMIN / Add Course</b></h4>
+                    <div class="button-container">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="location.href='course.html'">
+                        View Courses
+                        </button>   
+                       
+                    </div>    </section>
+             
+               
+
+            
+                    <H4><b>ADD COURSE</b></H4>
+                
+                    <div class="form-container">
+                        <form method="post" action="course.html" onsubmit="return myformvalfn(this)">
+                    
+                            <div class="name-group">
+                                <div class="input-group">
+                                    <label for="txtfirstname">Course Code:</label>
+                                    <input type="text" name="txtfirstname" id="txtfirstname">
+                                    <p id="firstnameerror"></p>
+                                </div>
+                
+                                <div class="input-group">
+                                    <label for="txtlastname">Course Image:</label>
+                                    <input type="file" name="txtlastname" id="txtlastname">
+                                    <p id="lastnameerror"></p>
+                                </div></div>
+                            
+                                <div class="name-group">
+                            <div class="input-group">
+                            <label for="txtemail">Course Name:</label>
+                            <input type="text" name="txtemail" id="txtemail">
+                            <p id="emailerror"></p>
+                          </div>
+                
+                          <div class="input-group">
+                            <label for="txtphnum">Description:</label>
+                            <input type="text" name="txtphnum" id="txtphnum">
+                            <p id="phonenumbererror"></p></div></div>
+                
+                            <div class="name-group">
+                    <div class="input-group">
+                            <label for="txtage">Duration:</label>
+                            <input type="time" name="txtage" id="txtage">
+                            <p id="ageerror"></p>
+                         </div>
+                
+                         <div class="input-group">
+                            <label for="txtyear">Fees:</label>
+                            <input type="number" name="txtyear" id="txtyear">
+                            <p id="yearerror"></p>
+                          </div></div>
+                    
+                          <div class="name-group">
+                            <div class="input-group">
+                            <label for="txtqual">Qualifications:</label>
+                            <input type="text" name="txtqual" id="txtqual">
+                            <p id="qualerror"></p></div>
+                    
+                            <div class="input-group">
+                            <label for="txtaddress">Course Modules:</label>
+                            <input type="number" name="txtaddress" id="txtaddress">
+                            <p id="addresserror"></p></div></div>
+                
+                    
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Clear" id="resetButton">
+                        </form>
+                    </div>
+                    
+                    <br><br><br><br>
+                    <footer class="mdl-mini-footer">
+                        <div class="mdl-mini-footer__left-section">
+                            <div class="mdl-logo" style="color: black;">TAMS Admin Dashboard</div>
+                            <ul class="mdl-mini-footer__link-list">
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Privacy & Terms</a></li>
+                            </ul>
+                        </div>
+                    </footer>
+                <!-- External JavaScript -->
+                <script src="/js/addcourse.js"></script>
+                <script src="/js/script.js"></script>
+</body>
+</html>
